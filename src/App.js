@@ -1,4 +1,4 @@
-mport React, { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './style.css';
 import axios from "axios"
 
@@ -10,7 +10,7 @@ export default function App() {
   }, []);
 
    const getRecipe= async ()=>{
-const response =await axios.get()
+const response =await axios.get( "http://www.edamam.com/ontologies/edamam.owl#recipe_379d5e1cd14a8339773a9477428c33f0")
    }
   return (
     <div className="App">
@@ -20,4 +20,4 @@ const response =await axios.get()
       </form>
     </div>
   );
-}
+  }
