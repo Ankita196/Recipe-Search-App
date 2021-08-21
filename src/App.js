@@ -21,10 +21,10 @@ export default function App() {
     console.log(response.data.hits);
   };
 
-  const updateSearch = e => {
+  const updateSearch = (e) => {
     setSearch(e.target.value);
   };
-  const updateQuery = e => {
+  const updateQuery = (e) => {
     e.preventDefault();
     setQuery(search);
   };
@@ -32,7 +32,7 @@ export default function App() {
     <div className="App">
       <form onSubmit={updateQuery}>
         <input type="text" />
-        <button type="submt" value={search} onChange={updateSearch}>
+        <button type="submit" value={search} onChange={updateSearch}>
           Search
         </button>
       </form>
