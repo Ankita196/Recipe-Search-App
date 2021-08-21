@@ -7,7 +7,7 @@ export default function App() {
   const APP_ID = '4b69527e';
   const APP_KEY = '3c6d7c8c19e2ec9e1047c7771953ca32';
   const [recipe, setResipe] = useState([]);
-  const [search, setSearch]=useState('')
+  const [search, setSearch] = useState('');
   useEffect(() => {
     getRecipe();
   }, []);
@@ -19,13 +19,19 @@ export default function App() {
     setResipe(response.data.hits);
     console.log(response.data.hits);
   };
+
+  updateSearch = e => {
+    console.log(e.target.value);
+  };
   return (
     <div className="App">
       <form>
         <input type="text" />
-        <button type="button">Search</button>
+        <button type="button" value={search} onChange={updateSearch}>
+          Search
+        </button>
       </form>
-      {recipe.map((recipe) => (
+      {recipe.map(recipe => (
         <Recipe
           title={recipe.recipe.label}
           calories={recipe.recipe.calories}
