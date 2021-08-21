@@ -20,7 +20,8 @@ export default function App() {
     console.log(response.data.hits);
   };
 
-  updateSearch = e => {
+  const updateSearch = e => {
+    setSearch(e.target.value);
     console.log(e.target.value);
   };
   return (
