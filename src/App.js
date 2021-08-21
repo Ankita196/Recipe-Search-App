@@ -7,6 +7,7 @@ export default function App() {
   const APP_ID = '4b69527e';
   const APP_KEY = '3c6d7c8c19e2ec9e1047c7771953ca32';
   const [recipe, setResipe] = useState([]);
+  const [search, setSearch]=useState('')
   useEffect(() => {
     getRecipe();
   }, []);
