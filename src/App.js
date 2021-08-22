@@ -7,7 +7,7 @@ import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
-
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -75,15 +75,21 @@ export default function App() {
         <input type="text" value={search} onChange={updateSearch} />
         <button type="submit">Search</button>
       </form> */}
-      {recipe.map(recipe => (
-        <Recipe
-           key={recipe.recipe.label}
-          title={recipe.recipe.label}
-          calories={recipe.recipe.calories}
-          image={recipe.recipe.image}
-          ingredients={recipe.recipe.ingredients}
-        />
-      ))}
+      <div style={{ margin: 10 }}>
+        <Grid container>
+          {recipe.map(recipe => (
+            <Grid item xs={3}>
+              <Recipe
+                key={recipe.recipe.label}
+                title={recipe.recipe.label}
+                calories={recipe.recipe.calories}
+                image={recipe.recipe.image}
+                ingredients={recipe.recipe.ingredients}
+              />
+            </Grid>
+          ))}
+        </Grid>
+      </div>
     </div>
   );
 }
