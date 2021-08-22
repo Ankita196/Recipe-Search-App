@@ -18,11 +18,20 @@ const useStyles = makeStyles(theme => ({
     width: 400
   },
   input: {
-    marginLeft: theme.spacing(1),
-    flex: 1
+    marginLeft: theme.spacing(5),
+    flex: 1,
+    width:150
   },
   iconButton: {
     padding: 10
+  },
+  roots: {
+    display: 'flex',
+    justifyContent: 'center',
+
+    '& > <ArrowRightIcon style={{fontSize:20}} />': {
+      margin: theme.spacing(2)
+    }
   }
 }));
 
@@ -32,7 +41,7 @@ export default function App() {
   const APP_KEY = '3c6d7c8c19e2ec9e1047c7771953ca32';
   const [recipe, setResipe] = useState([]);
   const [search, setSearch] = useState('');
-  const [query, setQuery] = useState(['chicken']);
+  const [query, setQuery] = useState(['milk']);
   useEffect(() => {
     getRecipe();
   }, [query]);
@@ -55,7 +64,7 @@ export default function App() {
   return (
     <div>
       <Paper component="form" className={classes.root} onSubmit={updateQuery}>
-        <InputBase
+        <InputBase 
           type="text"
           value={search}
           onChange={updateSearch}
@@ -75,10 +84,10 @@ export default function App() {
         <input type="text" value={search} onChange={updateSearch} />
         <button type="submit">Search</button>
       </form> */}
-      <div style={{ margin: 10 }}>
-        <Grid container>
+      <div>
+        <Grid container spacing={3}>
           {recipe.map(recipe => (
-            <Grid item xs={3}>
+            <Grid item xs={12} sm={3} className={classes.roots}>
               <Recipe
                 key={recipe.recipe.label}
                 title={recipe.recipe.label}
