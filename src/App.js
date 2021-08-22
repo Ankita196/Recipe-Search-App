@@ -21,20 +21,18 @@ export default function App() {
     console.log(response.data.hits);
   };
 
-  const updateSearch = e => {
+  function updateSearch(e) {
     setSearch(e.target.value);
-  };
-  const updateQuery = e => {
+  }
+  function updateQuery(e) {
     e.preventDefault();
     setQuery(search);
-  };
+  }
   return (
     <div className="App">
       <form onSubmit={updateQuery}>
-        <input type="text" />
-        <button type="submit" value={search} onChange={updateSearch}>
-          Search
-        </button>
+        <input type="text" value={search} onChange={updateSearch} />
+        <button type="submit">Search</button>
       </form>
       {recipe.map(recipe => (
         <Recipe
