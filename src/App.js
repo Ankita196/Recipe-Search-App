@@ -5,11 +5,9 @@ import Recipe from './Recipe';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
-import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-import DirectionsIcon from '@material-ui/icons/Directions';
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -79,6 +77,7 @@ export default function App() {
       </form> */}
       {recipe.map(recipe => (
         <Recipe
+           key={recipe.recipe.label}
           title={recipe.recipe.label}
           calories={recipe.recipe.calories}
           image={recipe.recipe.image}
