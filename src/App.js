@@ -8,7 +8,7 @@ export default function App() {
   const APP_KEY = '3c6d7c8c19e2ec9e1047c7771953ca32';
   const [recipe, setResipe] = useState([]);
   const [search, setSearch] = useState('');
-  const [query, setQuery] = useState('chicken');
+  const [query, setQuery] = useState(['chicken']);
   useEffect(() => {
     getRecipe();
   }, [query]);
