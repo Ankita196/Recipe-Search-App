@@ -15,6 +15,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     padding: '2px 4px',
     display: 'flex',
+    margin: '10px auto',
     alignItems: 'center',
     width: 400
   },
@@ -24,10 +25,6 @@ const useStyles = makeStyles(theme => ({
   },
   iconButton: {
     padding: 10
-  },
-  divider: {
-    height: 28,
-    margin: 4
   }
 }));
 
