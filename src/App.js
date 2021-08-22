@@ -58,9 +58,12 @@ export default function App() {
     setQuery(search);
   }
   return (
-    <div className="App">
+    <div>
       <Paper component="form" className={classes.root} onSubmit={updateQuery}>
         <InputBase
+          type="text"
+          value={search}
+          onChange={updateSearch}
           className={classes.input}
           placeholder="Search for recipe"
           inputProps={{ 'aria-label': 'search for recipe' }}
@@ -73,10 +76,10 @@ export default function App() {
           <SearchIcon />
         </IconButton>
       </Paper>
-      <form onSubmit={updateQuery}>
+      {/* <form onSubmit={updateQuery}>
         <input type="text" value={search} onChange={updateSearch} />
         <button type="submit">Search</button>
-      </form>
+      </form> */}
       {recipe.map(recipe => (
         <Recipe
           title={recipe.recipe.label}
