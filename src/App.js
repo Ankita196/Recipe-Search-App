@@ -51,7 +51,7 @@ export default function App() {
   const APP_KEY = '3c6d7c8c19e2ec9e1047c7771953ca32';
   const [recipe, setResipe] = useState([]);
   const [search, setSearch] = useState('');
-  const [query, setQuery] = useState(['milk']);
+  const [query, setQuery] = useState(['all']);
   useEffect(() => {
     getRecipe();
   }, [query]);
@@ -104,13 +104,13 @@ export default function App() {
         <button type="submit">Search</button>
       </form> */}
       <div>
-        <Grid container spacing={3}>
+        <Grid container spacing={7}>
           {recipe.map(recipe => (
             <Grid
               item
               xs={12}
               sm={3}
-              style={{ padding: 40, alignItems: 'center' }}
+              style={{marginLeft:"auto", alignItems: 'center' }}
             >
               <Recipe
                 key={recipe.recipe.label}
