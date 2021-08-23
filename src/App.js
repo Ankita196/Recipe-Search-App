@@ -10,7 +10,6 @@ import SearchIcon from '@material-ui/icons/Search';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
-
 const useStyles = makeStyles(theme => ({
   root: {
     padding: '2px 4px',
@@ -22,10 +21,19 @@ const useStyles = makeStyles(theme => ({
   input: {
     marginLeft: theme.spacing(5),
     flex: 1,
-    width:150
+    width: 150
   },
   iconButton: {
     padding: 10
+  },
+  heading: {
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: '#ad1457',
+
+    justifyContent: 'center',
+    fontFamily: ['Comic Sans MS', 'Comic Sans'],
+    backgroundColor: 'rgb(4, 5, 12)'
   },
   roots: {
     display: 'flex',
@@ -64,12 +72,21 @@ export default function App() {
     setQuery(search);
   }
   return (
-    <div >
-       <Typography variant="body2" color="textSecondary" component="p">
-            Ingredients
-          </Typography>
+    <div>
+      <Grid item xs={12}>
+        <br />
+        <br />
+        <br />
+        <Paper
+          className={classes.heading}
+          style={{ fontSize: 30, fontWeight: 'bold' }}
+        >
+          {' '}
+          Search Your Favourite Recipe
+        </Paper>
+      </Grid>
       <Paper component="form" className={classes.root} onSubmit={updateQuery}>
-        <InputBase 
+        <InputBase
           type="text"
           value={search}
           onChange={updateSearch}
@@ -92,7 +109,12 @@ export default function App() {
       <div>
         <Grid container spacing={3}>
           {recipe.map(recipe => (
-            <Grid item xs={12} sm={3} style={{padding:40, alignItems:"center"}}>
+            <Grid
+              item
+              xs={12}
+              sm={3}
+              style={{ padding: 40, alignItems: 'center' }}
+            >
               <Recipe
                 key={recipe.recipe.label}
                 title={recipe.recipe.label}
