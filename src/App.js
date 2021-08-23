@@ -118,6 +118,7 @@ export default function App() {
                 calories={recipe.recipe.calories}
                 image={recipe.recipe.image}
                 ingredients={recipe.recipe.ingredients}
+                cuisineType={recipe.recipe.cuisineType}
               />
             </Grid>
           ))}
