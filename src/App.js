@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     padding: '2px 4px',
     display: 'flex',
-    margin: '10px auto',
+    margin: '40px auto',
     alignItems: 'center',
     width: 400
   },
@@ -62,7 +62,7 @@ export default function App() {
     setQuery(search);
   }
   return (
-    <div>
+    <div >
       <Paper component="form" className={classes.root} onSubmit={updateQuery}>
         <InputBase 
           type="text"
@@ -87,7 +87,7 @@ export default function App() {
       <div>
         <Grid container spacing={3}>
           {recipe.map(recipe => (
-            <Grid item xs={12} sm={3} className={classes.roots}>
+            <Grid item xs={12} sm={3} style={{padding:40, alignItems:"center"}}>
               <Recipe
                 key={recipe.recipe.label}
                 title={recipe.recipe.label}
