@@ -32,8 +32,8 @@ const useStyles = makeStyles(theme => ({
     color: '#ad1457',
 
     justifyContent: 'center',
-    fontFamily: ['Comic Sans MS', 'Comic Sans'],
-    backgroundColor: 'rgb(4, 5, 12)'
+    fontFamily: ['Comic Sans MS', 'Comic Sans']
+    // backgroundColor: 'rgb(4, 5, 12)'
   },
   roots: {
     display: 'flex',
@@ -74,9 +74,6 @@ export default function App() {
   return (
     <div>
       <Grid item xs={12}>
-        <br />
-        <br />
-        <br />
         <Paper
           className={classes.heading}
           style={{ fontSize: 30, fontWeight: 'bold' }}
