@@ -1,1 +1,2 @@
-#tReciepe  Search app
+#Reciepe  Search app
+#Search your Favourite Food Recipe
