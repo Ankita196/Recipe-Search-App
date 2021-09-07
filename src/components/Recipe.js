@@ -85,7 +85,7 @@ const DialogActions = withStyles(theme => ({
   }
 }))(MuiDialogActions);
 
-const Recipe = ({ title, calories, image, ingredients, mealType }) => {
+const Recipe = ({ title, calories, image, ingredients, shareAS }) => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -123,20 +123,23 @@ const Recipe = ({ title, calories, image, ingredients, mealType }) => {
                 aria-labelledby="customized-dialog-title"
                 open={open}
               >
-                <DialogTitle id="customized-dialog-title" onClose={handleClose}>
+                <DialogTitle id="customized-dialog-title" onClose={handleClose} style={{color:"#ab003c",fontWeight:"bold"}}>
                   {title}
                 </DialogTitle>
                 <DialogContent dividers>
+                  <Typography style={{color:"#ab003c",fontWeight:"bold"}}>Recipe</Typography >
                   <CardContent>
                     {ingredients.map(ingredient => (
+                      
                       <Typography
+                      style={{color:"#212121",fontWeight:"bold"}}
                         variant="body2"
                         color="textSecondary"
                         component="p"
                         paragraph
                       >
                         {' '}
-                        {ingredient.text}
+                       {ingredient.text}
                       </Typography>
                     ))}
                   </CardContent>
@@ -149,9 +152,7 @@ const Recipe = ({ title, calories, image, ingredients, mealType }) => {
               </Dialog>
             </div>{' '}
             <br /> <br />
-            <Button variant="contained" color="primary" style={{ width: 250 }}>
-              Ingrediants
-            </Button>
+           
           </CardContent>
         </div>
       </Card>

@@ -7,6 +7,7 @@ import Recipes from "./components/landingpage"
 const App = () => {
   return (
     <div>
+      
       <BrowserRouter>
        <Recipes/>
        

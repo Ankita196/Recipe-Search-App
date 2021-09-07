@@ -99,10 +99,7 @@ export default function Recipes() {
           <SearchIcon />
         </IconButton>
       </Paper>
-      {/* <form onSubmit={updateQuery}>
-        <input type="text" value={search} onChange={updateSearch} />
-        <button type="submit">Search</button>
-      </form> */}
+      
       <div>
         <Grid container spacing={7}>
           {recipes.map(recipe => (
@@ -119,6 +116,7 @@ export default function Recipes() {
                 image={recipe.recipe.image}
                 ingredients={recipe.recipe.ingredients}
                 mealType={recipe.recipe.mealType}
+                shareAs={recipe.recipe.shareAS}
                 cuisineType={recipe.recipe.cuisineType}
               />
 
