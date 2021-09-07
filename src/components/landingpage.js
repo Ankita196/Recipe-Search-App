@@ -8,7 +8,6 @@ import InputBase from '@material-ui/core/InputBase';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -99,7 +98,7 @@ export default function Recipes() {
           <SearchIcon />
         </IconButton>
       </Paper>
-      
+
       <div>
         <Grid container spacing={7}>
           {recipes.map(recipe => (
@@ -107,7 +106,7 @@ export default function Recipes() {
               item
               xs={12}
               sm={3}
-              style={{marginLeft:"auto", alignItems: 'center' }}
+              style={{ marginLeft: 'auto', alignItems: 'center' }}
             >
               <Recipe
                 key={recipe.recipe.label}
@@ -116,13 +115,9 @@ export default function Recipes() {
                 image={recipe.recipe.image}
                 ingredients={recipe.recipe.ingredients}
                 mealType={recipe.recipe.mealType}
-                shareAs={recipe.recipe.shareAS}
-                cuisineType={recipe.recipe.cuisineType}
               />
-
             </Grid>
           ))}
-          
         </Grid>
       </div>
     </div>

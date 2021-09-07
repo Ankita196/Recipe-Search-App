@@ -1,14 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
-import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
-import Grid from '@material-ui/core/Grid';
-import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
@@ -21,6 +15,8 @@ import MuiDialogActions from '@material-ui/core/DialogActions';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
+
+
 
 const styles = theme => ({
   root: {
@@ -54,6 +50,7 @@ const useStyles = makeStyles(theme => ({
     transform: 'rotate(180deg)'
   }
 }));
+
 
 const DialogTitle = withStyles(styles)(props => {
   const { children, classes, onClose, ...other } = props;
@@ -123,30 +120,32 @@ const Recipe = ({ title, calories, image, ingredients, shareAS }) => {
                 aria-labelledby="customized-dialog-title"
                 open={open}
               >
-                <DialogTitle id="customized-dialog-title" onClose={handleClose} style={{color:"#ab003c",fontWeight:"bold"}}>
+                <DialogTitle
+                  id="customized-dialog-title"
+                  onClose={handleClose}
+                  style={{ color: '#ab003c', fontWeight: 'bold' }}
+                >
                   {title}
                 </DialogTitle>
                 <DialogContent dividers>
-                  <Typography style={{color:"#ab003c",fontWeight:"bold"}}>Recipe</Typography >
-                 
+                  <Typography style={{ color: '#ab003c', fontWeight: 'bold' }}>
+                    Recipe
+                  </Typography>
+
                   <CardContent>
                     {ingredients.map(ingredient => (
-                    
                       <Typography
-                      style={{color:"#212121",fontWeight:"bold"}}
+                        style={{ color: '#212121', fontWeight: 'bold' }}
                         variant="body2"
                         color="textSecondary"
                         component="p"
                         paragraph
                       >
                         {' '}
-                       {ingredient.text}
-                      
+                        {ingredient.text}
                       </Typography>
-                     
                     ))}
                   </CardContent>
-                 
                 </DialogContent>
                 <DialogActions>
                   <Button autoFocus onClick={handleClose} color="primary">
@@ -156,7 +155,6 @@ const Recipe = ({ title, calories, image, ingredients, shareAS }) => {
               </Dialog>
             </div>{' '}
             <br /> <br />
-           
           </CardContent>
         </div>
       </Card>
