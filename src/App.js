@@ -49,7 +49,7 @@ export default function App() {
   const classes = useStyles();
   const APP_ID = '4b69527e';
   const APP_KEY = '3c6d7c8c19e2ec9e1047c7771953ca32';
-  const [recipe, setResipe] = useState([]);
+  const [recipes, setResipe] = useState([]);
   const [search, setSearch] = useState('');
   const [query, setQuery] = useState(['all']);
   useEffect(() => {
@@ -105,7 +105,7 @@ export default function App() {
       </form> */}
       <div>
         <Grid container spacing={7}>
-          {recipe.map(recipe => (
+          {recipes.map(recipe => (
             <Grid
               item
               xs={12}
@@ -118,6 +118,7 @@ export default function App() {
                 calories={recipe.recipe.calories}
                 image={recipe.recipe.image}
                 ingredients={recipe.recipe.ingredients}
+                mealType={recipe.recipe.mealType}
                 cuisineType={recipe.recipe.cuisineType}
               />
             </Grid>

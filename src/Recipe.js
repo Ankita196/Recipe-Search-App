@@ -11,7 +11,7 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const useStyles = makeStyles(theme => ({
@@ -36,44 +36,32 @@ const useStyles = makeStyles(theme => ({
 
 const Recipe = ({ title, calories, image, ingredients }) => {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
+ 
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+  
 
   return (
     <div>
       <Card className={classes.root}>
         <CardHeader
-          action={
-            <IconButton aria-label="settings">
-              <MoreVertIcon />
-            </IconButton>
-          }
+         
           title={title}
-          subheader={calories}
+          
         />
+        <Typography>Calories :{calories}</Typography>
         <CardMedia className={classes.media} image={image} title={title} />
-        <CardContent>
+        <CardContent >
           <Typography variant="body2" color="textSecondary" component="p">
-            Ingredients
+          <IconButton aria-label="share">
+          <ShareIcon />  <Typography style={{marginLeft:90}}>Check All Details</Typography>
+        </IconButton>
+                    
           </Typography>
+         
         </CardContent>
-        <CardActions disableSpacing>
-          <IconButton
-            className={clsx(classes.expand, {
-              [classes.expandOpen]: expanded
-            })}
-            onClick={handleExpandClick}
-            aria-expanded={expanded}
-            aria-label="show more"
-          >
-            <ExpandMoreIcon />
-          </IconButton>
-        </CardActions>
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
-          <CardContent>
+        
+      
+          {/* <CardContent>
             {ingredients.map(ingredient => (
               <Typography
                 variant="body2"
@@ -86,7 +74,7 @@ const Recipe = ({ title, calories, image, ingredients }) => {
               </Typography>
             ))}
           </CardContent>
-        </Collapse>
+        */}
       </Card>
     </div>
   );
