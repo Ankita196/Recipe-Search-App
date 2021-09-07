@@ -128,9 +128,10 @@ const Recipe = ({ title, calories, image, ingredients, shareAS }) => {
                 </DialogTitle>
                 <DialogContent dividers>
                   <Typography style={{color:"#ab003c",fontWeight:"bold"}}>Recipe</Typography >
+                 
                   <CardContent>
                     {ingredients.map(ingredient => (
-                      
+                    
                       <Typography
                       style={{color:"#212121",fontWeight:"bold"}}
                         variant="body2"
@@ -140,9 +141,12 @@ const Recipe = ({ title, calories, image, ingredients, shareAS }) => {
                       >
                         {' '}
                        {ingredient.text}
+                      
                       </Typography>
+                     
                     ))}
                   </CardContent>
+                 
                 </DialogContent>
                 <DialogActions>
                   <Button autoFocus onClick={handleClose} color="primary">
