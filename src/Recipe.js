@@ -5,22 +5,24 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
+import Grid from '@material-ui/core/Grid';
 import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-
+import Button from '@material-ui/core/Button';
 import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: 300
+    width: 300,
+    height:500
   },
+  
   media: {
-    height: 0,
-    paddingTop: '56.25%' // 16:9
+    marginRight: 'auto',
+    marginLeft: 'auto'
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -34,7 +36,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Recipe = ({ title, calories, image, ingredients }) => {
+const Recipe = ({ title, calories, image, ingredients ,mealType}) => {
   const classes = useStyles();
  
 
@@ -44,22 +46,40 @@ const Recipe = ({ title, calories, image, ingredients }) => {
     <div>
       <Card className={classes.root}>
         <CardHeader
-         
+         className={classes.media}
           title={title}
           
         />
-        <Typography>Calories :{calories}</Typography>
-        <CardMedia className={classes.media} image={image} title={title} />
+        <Typography style={{marginLeft:30}}>Calories :{calories}</Typography>
+        <img
+                      src={image}
+                      style={{ height: '75%', width: '75%', display: 'block' }}
+                      className={classes.media}
+                    />
+        <div style={{display:"flex", justifyContent: 'center',}}> 
         <CardContent >
-          <Typography variant="body2" color="textSecondary" component="p">
-          <IconButton aria-label="share">
-          <ShareIcon />  <Typography style={{marginLeft:90}}>Check All Details</Typography>
-        </IconButton>
-                    
-          </Typography>
-         
-        </CardContent>
         
+        <Button variant="contained" color="primary" style={{ width:250}}>
+        Recipe
+      </Button> <br/> <br/>
+      <Button variant="contained" color="primary" style={{ width:250}}>
+      Ingrediants
+      </Button>
+        
+        </CardContent>
+       </div>
+            {/* {mealType.map(mealtype => (
+              <Typography
+                variant="body2"
+                color="textSecondary"
+                component="p"
+                paragraph
+              >
+              {' '}
+             {mealType.source}
+              </Typography>
+            ))} */}
+           
       
           {/* <CardContent>
             {ingredients.map(ingredient => (

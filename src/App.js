@@ -121,8 +121,10 @@ export default function App() {
                 mealType={recipe.recipe.mealType}
                 cuisineType={recipe.recipe.cuisineType}
               />
+
             </Grid>
           ))}
+          
         </Grid>
       </div>
     </div>
