@@ -99,7 +99,7 @@ const Recipe = ({ title, calories, image, ingredients, shareAS }) => {
         <Typography style={{ marginLeft: 30 }}>Calories :{calories}</Typography>
         <img
           src={image}
-          style={{ height: '75%', width: '75%', display: 'block' }}
+          style={{ height: '50%', width: '75%', display: 'block' }}
           className={classes.media}
         />
         <div style={{ display: 'flex', justifyContent: 'center' }}>
