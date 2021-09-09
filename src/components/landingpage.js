@@ -100,7 +100,7 @@ export default function Recipes() {
       </Paper>
 
       <div>
-        <Grid container spacing={7}>
+        <Grid container xs={12}>
           {recipes.map(recipe => (
             <Grid
               item

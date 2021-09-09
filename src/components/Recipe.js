@@ -42,7 +42,7 @@ flexGrow: 1,
     textAlign: 'center',
     color: theme.palette.text.secondary,
     width:300,
-    height:500,
+    height:400,
     backgroundImage:"linear-gradient(#fce4ec,white,#fce4ec)"
   },
   media: {
