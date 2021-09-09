@@ -3,6 +3,10 @@ p {
   font-family: Lato;
 }
 .App {
-  text-align: center;
+  
   background-color:rgb(4, 5, 12),
+}
+
+div{
+   background-color:rgb(4, 5, 12),
 }

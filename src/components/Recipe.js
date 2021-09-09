@@ -7,11 +7,12 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
-
+import Grid from "@material-ui/core/Grid"
 import Dialog from '@material-ui/core/Dialog';
 import MuiDialogTitle from '@material-ui/core/DialogTitle';
 import MuiDialogContent from '@material-ui/core/DialogContent';
 import MuiDialogActions from '@material-ui/core/DialogActions';
+import Paper from '@material-ui/core/Paper';
 
 import CloseIcon from '@material-ui/icons/Close';
 
@@ -33,7 +34,17 @@ const useStyles = makeStyles(theme => ({
   root: {
     width: 300
   },
-
+  roots :{
+flexGrow: 1,
+  },
+ paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+    width:300,
+    height:500,
+    backgroundImage:"linear-gradient(#fce4ec,white,#fce4ec)"
+  },
   media: {
     marginRight: 'auto',
     marginLeft: 'auto'
@@ -81,7 +92,7 @@ const DialogActions = withStyles(theme => ({
   }
 }))(MuiDialogActions);
 
-const Recipe = ({ title, calories, image, ingredients, shareAS }) => {
+const Recipe = ({ title, calories, image, ingredients}) => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -94,9 +105,11 @@ const Recipe = ({ title, calories, image, ingredients, shareAS }) => {
 
   return (
     <div>
-      <Card className={classes.root}>
-        <CardHeader className={classes.media} title={title} />
-        <Typography style={{ marginLeft: 30 }}>Calories :{calories}</Typography>
+    <Grid container className={classes.roots} spacing={2}>
+    <Grid item xs={12} >
+        <Paper className={classes.paper}>
+        <Typography style={{ marginLeft: 30 ,height:70,fontWeight:"bold",color:"#880e4f"}}>{title}</Typography>
+        <Typography style={{ marginLeft: 30 ,height:30,fontWeight:"bold",color:"#880e4f"}}>Calories :{calories}</Typography>
         <img
           src={image}
           style={{ height: '50%', width: '75%', display: 'block' }}
@@ -156,7 +169,10 @@ const Recipe = ({ title, calories, image, ingredients, shareAS }) => {
             <br /> <br />
           </CardContent>
         </div>
-      </Card>
+      
+      </Paper>
+       </Grid >
+        </Grid >
     </div>
   );
 };

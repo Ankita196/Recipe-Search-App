@@ -73,13 +73,13 @@ export default function Recipes() {
   return (
     <div>
       <Grid item xs={12}>
-        <Paper
+        <Grid
           className={classes.heading}
           style={{ fontSize: 30, fontWeight: 'bold' }}
         >
           {' '}
           Search Your Favourite Recipe
-        </Paper>
+        </Grid>
       </Grid>
       <Paper component="form" className={classes.root} onSubmit={updateQuery}>
         <InputBase

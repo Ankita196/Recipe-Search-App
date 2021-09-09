@@ -5,7 +5,7 @@ import Recipes from './components/landingpage';
 
 const App = () => {
   return (
-    <div>
+    <div className="App" >
       <Recipes />
     </div>
   );
