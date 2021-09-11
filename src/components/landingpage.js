@@ -104,7 +104,7 @@ export default function Recipes() {
           {recipes.map(recipe => (
             <Grid
               item
-              xs={12}
+              xs={10}
               sm={3}
               style={{ marginLeft: 'auto', alignItems: 'center' }}
             >
